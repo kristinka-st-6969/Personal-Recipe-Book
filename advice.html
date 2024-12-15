@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="фавикон.png" type="image/x-icon">
+    <title>RecipeCraft</title>
+    <link rel="stylesheet" href="sayt.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <style>
+        .advice-container {
+            margin-top: 65px;
+            margin-left: 247px;
+        }
+        /* Стили для контейнера с кнопкой и меню */
+        .advice-input {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Стили для кнопки */
+        .advice-button {
+            padding: 10px 20px;
+            background-color: #195A00;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Стили для скрытого меню */
+        .filter-menu {
+            display: none;
+            position: absolute;
+            top: 100%; /* Отображает меню прямо под кнопкой */
+            left: 0;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+
+        /* Отображение меню при нажатии */
+        .filter-menu.show {
+            display: block;
+        }
+
+        /* Стили элементов меню */
+        .filter-menu li {
+            list-style: none;
+            margin: 5px 0;
+        }
+        .filter-menu li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* Стили для карточек */
+        .advice-card {
+            display: flex; /* Все советы изначально видны */
+            margin-bottom: 20px; /* Добавим отступ между карточками */
+        }
+
+        .show-advice {
+            display: flex; /* Показывать советы с соответствующей рубрикой */
+        }
+
+        .hide-advice {
+            display: none; /* Скрывать советы с несоответствующей рубрикой */
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="main.html" class="logo">
+                <img src="лого.png">
+            </a>
+            <div class="search-container">
+                <form action="#" method="get">
+                    <input type="text" placeholder="Поиск..." name="search">
+                    <button type="submit">🔍</button>
+                </form>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="catalog.html">Каталог рецептов</a></li>
+                    <li><a href="advice.html">Советы</a></li>
+                    <li><a href="notebook.html">Записная книга</a></li>
+                    <li><a href="favorites.html" class="favourites">Избранное</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="advice-container">
+        <div class="background5">
+            <img src="петрушка.svg">
+        </div>
+        <div class="background4">
+            <img src="лист салата.svg">
+        </div>
+        <div class="background52">
+            <img src="петрушка.svg">
+        </div>
+        <div class="background42">
+            <img src="лист салата.svg">
+        </div>
+        <div class="background53">
+            <img src="петрушка.svg">
+        </div>
+        <div class="advice-input">
+            <button class="advice-button" onclick="toggleFilterMenu()">Рубрика</button>
+            <ul id="filterMenu" class="filter-menu">
+                <li><a href="javascript:void(0);" onclick="filterAdvice('storage')">По хранению продуктов</a></li>
+                <li><a href="javascript:void(0);" onclick="filterAdvice('cooking')">По приготовлению пищи</a></li>
+                <li><a href="javascript:void(0);" onclick="filterAdvice('canning')">По использованию консервированных продуктов</a></li>
+                <li><a href="javascript:void(0);" onclick="filterAdvice('cleaning')">По чистке и подготовке продуктов</a></li>
+                <li><a href="javascript:void(0);" onclick="filterAdvice('all')">Все советы</a></li>
+            </ul>
+        </div>
+
+        <a href="freezing1.html" class="advice-card-link">
+            <div class="advice-card" data-category="storage">
+                <img src="заморозка мяты и меллисы.png" alt="">
+                <div class="advice-card-info">
+                    <div>Заморозка мяты и мелиссы</div>
+                    <div>Читать далее...</div>
+                </div>
+            </div>
+        </a>
+        <a href="greenery2.html" class="advice-card-link">
+            <div class="advice-card" data-category="storage">
+                <img src="как хранить зелень.png" alt="">
+                <div class="advice-card-info">
+                    <div>Как хранить зелень</div>
+                    <div>Читать далее...</div>
+                </div>
+            </div>
+        </a>
+        <a href="vegetables3.html" class="advice-card-link">
+            <div class="advice-card" data-category="cooking">
+                <img src="быстрый способ приготовления овощей для салатов.png" alt="">
+                <div class="advice-card-info">
+                    <div>Быстрый способ приготовления овощей для салатов</div>
+                    <div>Читать далее...</div>
+                </div>
+            </div>
+        </a>
+        <a href="brine4.html" class="advice-card-link">
+            <div class="advice-card" data-category="canning">
+                <img src="советы по использованию рассола.png" alt="">
+                <div class="advice-card-info">
+                    <div>Советы по использованию рассола</div>
+                    <div>Читать далее...</div>
+                </div>
+            </div>
+        </a>
+        <a href="porridge5.html" class="advice-card-link">
+            <div class="advice-card" data-category="cooking">
+                <img src="как сварить манную кашу без комочков.png" alt="">
+                <div class="advice-card-info">
+                    <div>Как сварить манную кашу без комочков</div>
+                    <div>Читать далее...</div>
+                </div>
+            </div>
+        </a>
+        <a href="pancakes6.html" class="advice-card-link">
+            <div class="advice-card" data-category="cooking">
+                <img src="советы для очень тонких блинов.png" alt="">
+                <div class="advice-card-info">
+                    <div>Советы для очень тонких блинов</div>
+                    <div>Читать далее...</div>
+                </div>
+            </div>
+        </a>
+        <a href="fish7.html" class="advice-card-link">
+            <div class="advice-card" data-category="cleaning">
+                <img src="как быстро очистить рыбу от чешуи без ножа.png" alt="">
+                <div class="advice-card-info">
+                    <div>Как быстро очистить рыбу от чешуи без ножа</div>
+                    <div>Читать далее...</div>
+                </div>
+            </div>
+        </a>
+        <a href="pot8.html" class="advice-card-link">
+            <div class="advice-card" data-category="cleaning">
+                <img src="как легко открыть банку с консервацией.png" alt="">
+                <div class="advice-card-info">
+                    <div>Как легко открыть банку с консервацией</div>
+                    <div>Читать далее...</div>
+                </div>
+            </div>
+        </a>
+        <a href="pineapple9.html" class="advice-card-link">
+            <div class="advice-card" data-category="cleaning">
+                <img src="экономичный способ чистки ананаса.png" alt="">
+                <div class="advice-card-info">
+                    <div>Экономичный способ чистки ананаса</div>
+                    <div>Читать далее...</div>
+                </div>
+            </div>
+        </a>
+        <a href="forms10.html" class="advice-card-link">
+            <div class="advice-card" data-category="cleaning">
+                <img src="чистка силиконовых форм и ковриков от налета.png" alt="">
+                <div class="advice-card-info">
+                    <div>Чистка силиконовых форм и ковриков от налета</div>
+                    <div>Читать далее...</div>
+                </div>
+            </div>
+        </a>
+    </main>
+         
+
+    <footer>
+        <div class="address">
+            <p>Адрес:</p>
+            <p>Россия, г. Москва, ул. Лесная, д. 15, офис 23</p>
+            <p>Телефон: +7 (965) 968 9986</p>
+            <p>Пн - Пт: 10:00 - 18:00</p>
+        </div>
+        <div class="link">
+            <p>2024 personalRecipeBook.com</p>
+        </div>
+    </footer>
+    <script>
+        // Функция для переключения отображения меню фильтров
+        function toggleFilterMenu() {
+            const menu = document.getElementById('filterMenu');
+            menu.classList.toggle('show'); // Переключаем состояние меню
+        }
+    
+        // Функция для фильтрации советов по выбранной рубрике и скрытия меню после выбора
+        function filterAdvice(category) {
+            const allAdviceCards = document.querySelectorAll('.advice-card');
+            
+            // Фильтруем советы
+            allAdviceCards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.classList.remove('hide-advice');
+                    card.classList.add('show-advice');
+                } else {
+                    card.classList.add('hide-advice');
+                    card.classList.remove('show-advice');
+                }
+            });
+            
+            // Скрываем меню фильтров после выбора рубрики
+            const menu = document.getElementById('filterMenu');
+            menu.classList.remove('show');
+        }
+    </script>
+</body>
+</html>

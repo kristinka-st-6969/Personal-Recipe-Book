@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="фавикон.png" type="image/x-icon">
+    <title>RecipeCraft - Завтраки Итальянской Кухни</title>
+    <link rel="stylesheet" href="sayt.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="main.html" class="logo">
+                <img src="лого.png" alt="Logo">
+            </a>
+            <div class="search-container">
+                <form action="#" method="get">
+                    <input type="text" placeholder="Поиск..." name="search">
+                    <button type="submit">🔍</button>
+                </form>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="catalog.html">Каталог рецептов</a></li>
+                    <li><a href="advice.html">Советы</a></li>
+                    <li><a href="notebook.html">Записная книга</a></li>
+                    <li><a href="favorites.html" class="favourites">Избранное</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="recipe-container">
+        <div class="recipe-image">
+            <img src="фриттата с помидорами и моцареллой.png" alt="Итальянский завтрак">
+        </div>
+        <div class="recipe-content">
+            <h1>Фриттата с помидорами и моцареллой</h1>
+            <p>5 ингредиентов | 2 порции | 30 минут</p>
+            <p><strong>Уровень сложности:</strong> Средний</p>
+            <p>Фриттата – это традиционное итальянское блюдо, похожее на омлет, но с добавлением различных ингредиентов. В этом рецепте мы предлагаем вам приготовить фриттату с помидорами, моцареллой и базиликом, что создаст идеальный итальянский завтрак.</p>
+        </div>
+    </div>
+    
+    <div class="recipe-details">
+        <h2>Пищевая ценность</h2>
+        <table>
+            <tr>
+                <th>Элемент</th>
+                <th>Значение</th>
+            </tr>
+            <tr>
+                <td>Калории</td>
+                <td>250 ккал</td>
+            </tr>
+            <tr>
+                <td>Белки</td>
+                <td>16 г</td>
+            </tr>
+            <tr>
+                <td>Жиры</td>
+                <td>18 г</td>
+            </tr>
+            <tr>
+                <td>Углеводы</td>
+                <td>5 г</td>
+            </tr>
+        </table>
+        
+        <h2>Ингредиенты</h2>
+        <ul class="ingredients">
+            <li>4 яйца</li>
+            <li>100 г моцареллы</li>
+            <li>2 помидора</li>
+            <li>2 ст.л. оливкового масла</li>
+            <li>Свежий базилик</li>
+        </ul>
+        
+        <h2>Инструкция</h2>
+        <ol>
+            <li>Взбейте яйца в миске, добавьте нарезанные помидоры и порезанную моцареллу.</li>
+            <li>Нагрейте оливковое масло в сковороде и вылейте яичную смесь. Готовьте на среднем огне около 5-7 минут.</li>
+            <li>Когда края фриттаты подрумянятся, аккуратно переверните и готовьте еще 3-5 минут до полной готовности.</li>
+            <li>Перед подачей украсьте свежим базиликом.</li>
+        </ol>
+        <div id="ingredients-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+              <h2>Редактировать ингредиенты</h2>
+              <ul id="ingredients-list"></ul>
+              <button id="save-changes-btn">Сохранить изменения</button>
+              <button id="close-modal-btn">Закрыть</button>
+            </div>
+          </div>
+          <button id="open-modal-btn" class="ingredients-btn">Редактировать ингредиенты</button>
+    </div>
+
+    <footer>
+        <div class="address">
+            <p>Адрес:</p>
+            <p>Россия, г. Москва, ул. Лесная, д. 15, офис 23</p>
+            <p>Телефон: +7 (965) 968 9986</p>
+            <p>Пн - Пт: 10:00 - 18:00</p>
+        </div>
+        <div class="link">
+            <p>2024 personalRecipeBook.com</p>
+        </div>
+    </footer>
+    <script src="sayt.js"></script>
+</body>
+</html>

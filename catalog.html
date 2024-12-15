@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="фавикон.png" type="image/x-icon">
+    <title>RecipeCraft</title>
+    <link rel="stylesheet" href="sayt.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="main.html" class="logo">
+                <img src="лого.png">
+            </a>
+            <div class="search-container">
+                <form action="#" method="get">
+                    <input type="text" placeholder="Поиск..." name="search">
+                    <button type="submit">🔍</button>
+                </form>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="catalog.html">Каталог рецептов</a></li>
+                    <li><a href="advice.html">Советы</a></li>
+                    <li><a href="notebook.html">Записная книга</a></li>
+                    <li><a href="favorites.html" class="favourites">Избранное</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+            <div id="filterButton" class="filters"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#ffffff"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></div>
+        <div class="filters-container" id="filtersPanel">
+            <div id="closeFilters" class="close"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></div>
+            <form id="filters-form">
+                <div class="filter-group">
+                    <div class="filter-label">Выберите кухню:</div>
+                    <label>
+                        <input type="checkbox" class="filter-item" name="cuisine" value="Русская"> Русская
+                    </label>
+                    <label>
+                        <input type="checkbox" class="filter-item" name="cuisine" value="Итальянская"> Итальянская
+                    </label>
+                    <label>
+                        <input type="checkbox" class="filter-item" name="cuisine" value="Испанская"> Испанская
+                    </label>
+                </div>
+        
+                <div class="filter-group">
+                    <div class="filter-label">Выберите тип блюда:</div>
+                    <label>
+                        <input type="checkbox" class="filter-item" name="mealType" value="Основные блюда"> Основные блюда
+                    </label>
+                    <label>
+                        <input type="checkbox" class="filter-item" name="mealType" value="Выпечка и десерты"> Выпечка и десерты
+                    </label>
+                    <label>
+                        <input type="checkbox" class="filter-item" name="mealType" value="Паста и пицца"> Паста и пицца
+                    </label>
+                </div>
+                <div class="filter-group">
+                    <div class="filter-label">Выберите время суток:</div>
+                    <label>
+                        <input type="checkbox" class="filter-item" name="mealTime" value="Завтрак"> Завтрак
+                    </label>
+                    <label>
+                        <input type="checkbox" class="filter-item" name="mealTime" value="Обед"> Обед
+                    </label>
+                    <label>
+                        <input type="checkbox" class="filter-item" name="mealTime" value="Ужин"> Ужин
+                    </label>
+                </div>
+                <div class="filter-group">
+                    <label for="prep-time" class="filter-label">Время приготовления: <span id="prep-time-value">0</span> минут</label>
+                    <input type="range" id="prep-time" class="filter-item" min="0" max="180" step="1" value="0" />
+                </div>
+        
+                <div class="filter-buttons-block">
+                    <button type="button" class="filter-button" onclick="applyFilters()">Применить фильтры</button>
+                <button type="button" class="filter-button" onclick="resetFilters()">Сбросить фильтры</button>
+                </div>
+            </form>
+        </div>
+        <div class="background5">
+            <img src="петрушка.svg">
+        </div>
+        <div class="background4">
+            <img src="лист салата.svg">
+        </div>
+        <div class="background52">
+            <img src="петрушка.svg">
+        </div>
+        <div class="background42">
+            <img src="лист салата.svg">
+        </div>
+        <div class="background53">
+            <img src="петрушка.svg">
+        </div>
+        <div class="background43">
+            <img src="лист салата.svg">
+        </div>
+        <div class="background54">
+            <img src="петрушка.svg">
+        </div>
+        <div class="background44">
+            <img src="лист салата.svg">
+        </div>
+    <main class="catalog-container">
+
+        <div class="catalog-card" data-title="Сырники из творога" data-link="cheesecakes1.html">
+            <a href="cheesecakes1.html" class="catalog-card-link">
+                <img src="сырники из творога.png" alt="Сырники из творога">
+                <div class="catalog-card-info">
+                    <div>Завтраки·Русская кухня·Пошаговые рецепты·Средний</div>
+                    <div>Простые сырники из творога</div>
+                    <div>5 ингредиентов | 2 порции | 30 минут</div>
+                </div>
+            </a>
+            <button onclick="addToFavorites(this)" class="favorite-btn">❤️</button>
+        </div>
+
+        <div class="catalog-card" data-title="Лазанья классическая с мясом" data-link="lasagna2.html">
+            <a href="lasagna2.html" class="catalog-card-link">
+                <img src="лазанья классическая с мясом.png" alt="Лазанья классическая с мясом">
+                <div class="catalog-card-info">
+                    <div>Паста и пицца·Итальянская кухня·Пошаговые рецепты·Средний</div>
+                    <div>Лазанья классическая с мясом</div>
+                    <div>8 ингредиентов | 6 порций | 40 минут</div>
+                </div>
+            </a>
+            <button onclick="addToFavorites(this)" class="favorite-btn">❤️</button>
+        </div>
+
+        <div class="catalog-card" data-title="классическая шарлотка" data-link="charlotte3.html">
+            <a href="charlotte3.html" class="catalog-card-link">
+                <img src="классическая шарлотка.png" alt="Классическая шарлотка">
+                <div class="catalog-card-info">
+                    <div>Выпечка и десерты·Русская кухня·Пошаговые рецепты·Легкий</div>
+                    <div>Классическая шарлотка</div>
+                    <div>6 ингредиентов | 12 порций | 35 минут</div>
+                </div>
+            </a>
+            <button onclick="addToFavorites(this)" class="favorite-btn">❤️</button>
+        </div>
+
+        <div class="catalog-card" data-title="курица пикассо" data-link="picasso4.html">
+            <a href="picasso4.html" class="catalog-card-link">
+                <img src="курица пикассо.png" alt="Курица Пикассо">
+                <div class="catalog-card-info">
+                    <div>Основные блюда·Испанская кухня·Пошаговые рецепты·Средний</div>
+                    <div>Курица “Пикассо”</div>
+                    <div>15 ингредиентов | 4 порции | 45 минут</div>
+                </div>
+            </a>
+            <button onclick="addToFavorites(this)" class="favorite-btn">❤️</button>
+        </div>
+
+        <div class="catalog-card" data-title="фриттата с помидорами и моцареллой" data-link="fritatta5.html">
+            <a href="fritatta5.html" class="catalog-card-link">
+                <img src="фриттата с помидорами и моцареллой.png" alt="фриттата с помидорами и моцареллой">
+                <div class="catalog-card-info">
+                    <div>Завтраки·Итальянская кухня·Пошаговые рецепты·Средний</div>
+                    <div>Фриттата с помидорами и моцареллой</div>
+                    <div>5 ингредиентов | 2 порции | 30 минут</div>
+                </div>
+            </a>
+            <button onclick="addToFavorites(this)" class="favorite-btn">❤️</button>
+        </div>
+        
+        <div class="catalog-card" data-title="тортилья испанола" data-link="tortilla6.html">
+            <a href="tortilla6.html" class="catalog-card-link">
+                <img src="тортилья испанола.png" alt="тортилья испанола">
+                <div class="catalog-card-info">
+                    <div>Завтраки·Испанская кухня·Пошаговые рецепты·Средний</div>
+                    <div>Тортилья Испанола</div>
+                    <div>5 ингредиентов | 4 порции | 40 минут</div>
+                </div>
+            </a>
+            <button onclick="addToFavorites(this)" class="favorite-btn">❤️</button>
+        </div>
+        
+        <div class="catalog-card" data-title="  карбонара" data-link="carbonara7.html">
+            <a href="carbonara7.html" class="catalog-card-link">
+                <img src="карбонара.png" alt="паста карбонара">
+                <div class="catalog-card-info">
+                    <div>Основные блюда·Итальянская кухня·Пошаговые рецепты·Легкий</div>
+                    <div>Паста Карбонара</div>
+                    <div>5 ингредиентов | 4 порции | 25 минут</div>
+                </div>
+            </a>
+            <button onclick="addToFavorites(this)" class="favorite-btn">❤️</button>
+        </div>
+
+        <div class="catalog-card" data-title="борщ с мясом" data-link="borsch8.html">
+            <a href="borsch8.html" class="catalog-card-link">
+                <img src="борщ с мясом.png" alt="борщ с мясом">
+                <div class="catalog-card-info">
+                    <div>Основные блюда·Русская кухня·Пошаговые рецепты·Сложный</div>
+                    <div>Борщ с мясом</div>
+                    <div>12 ингредиентов | 8 порций | 2 часа</div>
+                </div>
+            </a>
+            <button onclick="addToFavorites(this)" class="favorite-btn">❤️</button>
+        </div>
+
+        <div class="catalog-card" data-title="пицца с квашеной капустой" data-link="cabbage9.html">
+            <a href="cabbage9.html" class="catalog-card-link">
+                <img src="пицца с квашеной капустой.png" alt="пицца с квашеной капустой">
+                <div class="catalog-card-info">
+                    <div>Паста и пицца·Русская кухня·Пошаговые рецепты·Средний</div>
+                    <div>Пицца с квашеной капустой</div>
+                    <div>10 ингредиентов | 4 порции | 1 час</div>
+                </div>
+            </a>
+            <button onclick="addToFavorites(this)" class="favorite-btn">❤️</button>
+        </div>
+
+        <div class="catalog-card" data-title="пицца с хамоном и оливками" data-link="hamon10.html">
+            <a href="hamon10.html" class="catalog-card-link">
+                <img src="пицца с хамоном и оливками.png" alt="пицца с хамоном и оливками">
+                <div class="catalog-card-info">
+                    <div>Паста и пицца·Испанская кухня·Пошаговые рецепты·Сложный</div>
+                    <div>Пицца с хамоном и оливками</div>
+                    <div>12 ингредиентов | 4 порции | 1 час 30 минут</div>
+                </div>
+            </a>
+            <button onclick="addToFavorites(this)" class="favorite-btn">❤️</button>
+        </div>
+
+        <div class="catalog-card" data-title="чуррос" data-link="churros11.html"> 
+            <a href="churros11.html" class="catalog-card-link">
+                <img src="чуррос.png" alt="чуррос">
+                <div class="catalog-card-info">
+                    <div>Выпечка и десерты·Испанская кухня·Пошаговые рецепты·Легкий</div>
+                    <div>Чуррос</div>
+                    <div>5 ингредиентов | 4 порции | 30 минут</div>
+                </div>
+            </a>
+            <button onclick="addToFavorites(this)" class="favorite-btn">❤️</button>
+        </div>
+        
+        <div class="catalog-card" data-title="тирамису" data-link="tiramisu12.html">
+            <a href="tiramisu12.html" class="catalog-card-link">
+                <img src="тирамису.png" alt="тирамису">
+                <div class="catalog-card-info">
+                    <div>Выпечка и десерты·Итальянская кухня·Пошаговые рецепты·Средний</div>
+                    <div>Тирамису</div>
+                    <div>10 ингредиентов | 6 порций | 45 минут</div>
+                </div>
+            </a>
+            <button onclick="addToFavorites(this)" class="favorite-btn">❤️</button>
+        </div>
+
+        <div class="catalog-card" data-title="ризотто с грибами" data-link="risotto13.html">
+        <a href="risotto13.html" class="catalog-card-link">
+                <img src="ризотто с грибами.png" alt="ризотто с грибами">
+                <div class="catalog-card-info">
+                    <div>Обед·Итальянская кухня·Пошаговые рецепты·Средний</div>
+                    <div>Ризотто с грибами</div>
+                    <div>10 ингредиентов | 4 порции | 40 минут</div>
+                </div>
+            </a>
+            <button onclick="addToFavorites(this)" class="favorite-btn">❤️</button>
+        </div>
+
+        <div class="catalog-card" data-title="паэлья с морепродуктами" data-link="paella14.html">
+        <a href="paella14.html" class="catalog-card-link">
+                <img src="паэлья с морепродуктами.png" alt="паэлья с морепродуктами">
+                <div class="catalog-card-info">
+                    <div>Ужин·Испанская кухня·Пошаговые рецепты·Сложный</div>
+                    <div>Паэлья с морепродуктами</div>
+                    <div>12 ингредиентов | 6 порций | 1 час 20 минут</div>
+                </div>
+            </a>
+            <button onclick="addToFavorites(this)" class="favorite-btn">❤️</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="address">
+            <p>Адрес:</p>
+            <p>Россия, г. Москва, ул. Лесная, д. 15, офис 23</p>
+            <p>Телефон: +7 (965) 968 9986</p>
+            <p>Пн - Пт: 10:00 - 18:00</p>
+        </div>
+        <div class="link">
+            <p>2024 personalRecipeBook.com</p>
+        </div>
+    </footer>
+    <script src="sayt.js"></script>
+</body>
+</html>

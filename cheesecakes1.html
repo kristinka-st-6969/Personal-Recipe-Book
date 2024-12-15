@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="фавикон.png" type="image/x-icon">
+    <title>RecipeCraft</title>
+    <link rel="stylesheet" href="sayt.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="main.html" class="logo">
+                <img src="лого.png">
+            </a>
+            <div class="search-container">
+                <form action="#" method="get">
+                    <input type="text" placeholder="Поиск..." name="search">
+                    <button type="submit">🔍</button>
+                </form>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="catalog.html">Каталог рецептов</a></li>
+                    <li><a href="advice.html">Советы</a></li>
+                    <li><a href="notebook.html">Записная книга</a></li>
+                    <li><a href="favorites.html" class="favourites">Избранное</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="recipe-container">
+        <div class="recipe-image">
+            <img src="сырники из творога.png" alt="Сырники">
+        </div>
+        <div class="recipe-content">
+            <h1>Простые сырники из творога</h1>
+            <p>5 ингредиентов | 4 порции | 20 минут</p>
+            <p><strong>Уровень сложности:</strong>Средний</p>
+            <p>Сырники из творога – это классический завтрак, который легко приготовить дома. Они получаются мягкими, нежными и 
+               идеально подходят для утренней трапезы или легкого десерта. Мы предлагаем вам рецепт традиционных сырников, 
+               который порадует вас и ваших близких.
+            </p>
+        </div>
+    </div>
+    
+    <div class="recipe-details">
+        <h2>Пищевая ценность</h2>
+        <table>
+            <tr>
+                <th>Элемент</th>
+                <th>Значение</th>
+            </tr>
+            <tr>
+                <td>Калории</td>
+                <td>150 ккал</td>
+            </tr>
+            <tr>
+                <td>Белки</td>
+                <td>10 г</td>
+            </tr>
+            <tr>
+                <td>Жиры</td>
+                <td>5 г</td>
+            </tr>
+            <tr>
+                <td>Углеводы</td>
+                <td>15 г</td>
+            </tr>
+        </table>
+        <h2>Ингредиенты</h2>
+        <ul class="ingredients">
+            <li>400 г творога</li>
+            <li>1 яйцо</li>
+            <li>2 ст.л. сахара</li>
+            <li>4 ст.л. муки</li>
+            <li>Щепотка соли</li>
+        </ul>
+
+
+        
+        <h2>Инструкция</h2>
+        <ol>
+            <li>В глубокой миске смешайте творог, яйцо, сахар и соль. Постепенно добавьте муку, пока смесь не станет 
+                густой и однородной.
+            </li>
+            <li>Разделите тесто на небольшие части, скатайте их в шарики и слегка приплюсните, придавая форму сырников.
+            </li>
+            <li>Разогрейте сковороду с небольшим количеством масла на среднем огне. Обжаривайте сырники с обеих сторон, 
+                пока они не станут золотистыми.
+            </li>
+            <li>Подавать сырники можно со сметаной, вареньем или медом по вкусу.
+            </li>
+        </ol>
+        <div id="ingredients-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+              <h2>Редактировать ингредиенты</h2>
+              <ul id="ingredients-list"></ul>
+              <button id="save-changes-btn" class="ingredients-btn">Сохранить изменения</button>
+              <button id="close-modal-btn" class="ingredients-btn">Закрыть</button>
+            </div>
+          </div>
+          <button id="open-modal-btn" class="ingredients-btn">Редактировать ингредиенты</button>
+    </div>
+    
+
+    <footer>
+        <div class="address">
+            <p>Адрес:</p>
+            <p>Россия, г. Москва, ул. Лесная, д. 15, офис 23</p>
+            <p>Телефон: +7 (965) 968 9986</p>
+            <p>Пн - Пт: 10:00 - 18:00</p>
+        </div>
+        <div class="link">
+            <p>2024 personalRecipeBook.com</p>
+        </div>
+    </footer>
+    <script src="sayt.js"></script>
+</body>
+</html>

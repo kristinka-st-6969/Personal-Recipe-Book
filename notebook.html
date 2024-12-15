@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="фавикон.png" type="image/x-icon">
+    <title>RecipeCraft</title>
+    <link rel="stylesheet" href="sayt.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="main.html" class="logo">
+                <img src="лого.png">
+            </a>
+            <div class="search-container">
+                <form action="#" method="get">
+                    <input type="text" placeholder="Поиск..." name="search">
+                    <button type="submit">🔍</button>
+                </form>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="catalog.html">Каталог рецептов</a></li>
+                    <li><a href="advice.html">Советы</a></li>
+                    <li><a href="notebook.html">Записная книга</a></li>
+                    <li><a href="favorites.html" class="favourites">Избранное</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="notebook-containerrr">
+        <div class="background5">
+            <img src="петрушка.svg">
+        </div>
+        <div class="background4">
+            <img src="лист салата.svg">
+        </div>
+        <div class="background52">
+            <img src="петрушка.svg">
+        </div>
+        <div class="notebookkk">
+            <div class="notebook-insideee">
+                <div class="notebook-buttonsss">
+                    <button onclick="addRecipe()">Добавление рецепта</button>
+                    <button onclick="deleteSelectedRecipe()">Удаление рецепта</button>
+                    <button onclick="editSelectedRecipe()">Редактирование рецепта</button>
+                    <button onclick="planMenu()">Планировать меню</button>
+                    <button onclick="viewMenu()">Просмотр меню</button>
+                </div>
+                <div class="notebook-infooo">
+                    <h2>Добавить рецепт</h2>
+                    <div id="recipeInputContainerrr">
+                        <input type="text" id="recipeTitleInputtt" class="recipe-inputtt" placeholder="Название рецепта">
+                        <textarea id="recipeIngredientsInputtt" class="recipe-inputtt" placeholder="Ингредиенты (по одному на строку)"></textarea>
+                        <textarea id="recipeDescriptionInputtt" class="recipe-inputtt" placeholder="Описание приготовления"></textarea>
+                        <input type="number" id="recipeTimeInputtt" class="recipe-inputtt" placeholder="Время приготовления (в минутах)">
+                        <input type="number" id="recipeServingsInputtt" class="recipe-inputtt" placeholder="Количество порций">
+                        <select id="recipeDifficultyInputtt" class="recipe-inputtt">
+                            <option value="" disabled selected>Выберите уровень сложности</option>
+                            <option value="Легкий">Легкий</option>
+                            <option value="Средний">Средний</option>
+                            <option value="Сложный">Сложный</option>
+                        </select>
+                        <div class="file-input-container">
+                            <label for="recipeImageInputtt" class="custom-file-input">Выберите изображение</label>
+                            <input type="file" id="recipeImageInputtt" class="recipe-inputtt" accept="image/*" onchange="previewImage(event)">
+                            <div id="imagePreviewContainer" class="image-preview-container" style="display: none;">
+                                <img id="imagePreview" class="image-preview" src="" alt="Превью изображения">
+                            </div>
+                        </div>
+                    </div>
+                    <h2>Мои рецепты</h2>
+                    <ul id="recipeListtt"></ul>
+                    <div id="recipeDetailsss" class="recipe-detailsss" style="display: none;">
+                        <h3>Детали рецепта</h3>
+                        <p><strong>Название:</strong> <span id="detailTitleee"></span></p>
+                        <p><span id="detailContenttt"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="menuModal" class="modal">
+        <div class="modal-content">
+            <h2>Планировать меню</h2>
+            <p>Выберите день недели для выбранного рецепта:</p>
+            <select id="daySelector">
+                <option value="Понедельник">Понедельник</option>
+                <option value="Вторник">Вторник</option>
+                <option value="Среда">Среда</option>
+                <option value="Четверг">Четверг</option>
+                <option value="Пятница">Пятница</option>
+                <option value="Суббота">Суббота</option>
+                <option value="Воскресенье">Воскресенье</option>
+            </select>
+            <button onclick="savePlannedMenu()" class="open-btn">Сохранить в меню</button>
+            <button onclick="closeModal('menuModal')" class="close-btn">Закрыть</button>          
+        </div>
+    </div>
+
+    <!-- Модальное окно для просмотра меню -->
+    <div id="viewMenuModal" class="modal-menu">
+        <div class="modal-content">
+            <h2>Просмотр меню</h2>
+            <div id="menuByDay"></div>
+            <button onclick="closeModal('viewMenuModal')" class="close-btn">Закрыть</button>
+        </div>
+    </div>
+    <footer>
+        <div class="address">
+            <p>Адрес:</p>
+            <p>Россия, г. Москва, ул. Лесная, д. 15, офис 23</p>
+            <p>Телефон: +7 (965) 968 9986</p>
+            <p>Пн - Пт: 10:00 - 18:00</p>
+        </div>
+        <div class="link">
+            <p>2024 personalRecipeBook.com</p>
+        </div>
+    </footer>
+        <script src="notebook.js"></script>
+</body>
+</html>
