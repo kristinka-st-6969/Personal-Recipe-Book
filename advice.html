@@ -15,7 +15,6 @@
             margin-top: 65px;
             margin-left: 247px;
         }
-        /* Стили для контейнера с кнопкой и меню */
         .advice-input {
             position: relative;
             display: flex;
@@ -23,7 +22,6 @@
             gap: 10px;
         }
 
-        /* Стили для кнопки */
         .advice-button {
             padding: 10px 20px;
             background-color: #195A00;
@@ -32,11 +30,10 @@
             font-size: 16px;
         }
 
-        /* Стили для скрытого меню */
         .filter-menu {
             display: none;
             position: absolute;
-            top: 100%; /* Отображает меню прямо под кнопкой */
+            top: 100%;
             left: 0;
             background-color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -45,12 +42,10 @@
             z-index: 1000;
         }
 
-        /* Отображение меню при нажатии */
         .filter-menu.show {
             display: block;
         }
 
-        /* Стили элементов меню */
         .filter-menu li {
             list-style: none;
             margin: 5px 0;
@@ -60,18 +55,17 @@
             color: #333;
         }
 
-        /* Стили для карточек */
         .advice-card {
-            display: flex; /* Все советы изначально видны */
-            margin-bottom: 20px; /* Добавим отступ между карточками */
+            display: flex;
+            margin-bottom: 20px;
         }
 
         .show-advice {
-            display: flex; /* Показывать советы с соответствующей рубрикой */
+            display: flex;
         }
 
         .hide-advice {
-            display: none; /* Скрывать советы с несоответствующей рубрикой */
+            display: none;
         }
     </style>
 
@@ -79,7 +73,7 @@
 <body>
     <header>
         <div class="container">
-            <a href="main.html" class="logo">
+            <a href="index.html" class="logo">
                 <img src="лого.png">
             </a>
             <div class="search-container">
@@ -231,17 +225,14 @@
         </div>
     </footer>
     <script>
-        // Функция для переключения отображения меню фильтров
         function toggleFilterMenu() {
             const menu = document.getElementById('filterMenu');
-            menu.classList.toggle('show'); // Переключаем состояние меню
+            menu.classList.toggle('show');
         }
     
-        // Функция для фильтрации советов по выбранной рубрике и скрытия меню после выбора
         function filterAdvice(category) {
             const allAdviceCards = document.querySelectorAll('.advice-card');
             
-            // Фильтруем советы
             allAdviceCards.forEach(card => {
                 if (category === 'all' || card.getAttribute('data-category') === category) {
                     card.classList.remove('hide-advice');
@@ -252,7 +243,6 @@
                 }
             });
             
-            // Скрываем меню фильтров после выбора рубрики
             const menu = document.getElementById('filterMenu');
             menu.classList.remove('show');
         }
