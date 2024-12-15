@@ -234,7 +234,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function displayIngredientsOnPage(ingredients) {
     const menu = document.querySelector('.ingredients');
-    menu.innerHTML = '';
+    if (menu) {
+    menu.innerHTML = ''
+    }
     ingredients.forEach(ingredient => {
         const li = document.createElement('li');
         li.textContent = ingredient;
