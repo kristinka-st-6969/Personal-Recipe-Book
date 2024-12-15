@@ -117,5 +117,62 @@
         </div>
     </footer>
     <script src="sayt.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script>
+        const openModalBtn = document.getElementById("open-modal-btn");
+        const saveChangesBtn = document.getElementById("save-changes-btn");
+        const closeModalBtn = document.getElementById("close-modal-btn");
+        const modal = document.getElementById("ingredients-modal");
+        const ingredientsList = document.getElementById("ingredients-list");
+
+        let ingredients = [
+            "250 г риса для ризотто (например, арборио)",
+            "200 г свежих грибов (например, шампиньонов)",
+            "1 луковица",
+            "2 зубчика чеснока",
+            "750 мл куриного или овощного бульона",
+            "100 мл белого сухого вина",
+            "50 г тертого пармезана",
+            "50 г сливочного масла",
+            "2 ст. л. оливкового масла",
+            "Соль и перец по вкусу"
+        ];
+
+        function renderIngredients() {
+            ingredientsList.innerHTML = "";  
+            ingredients.forEach((ingredient, index) => {
+                const li = document.createElement("li");
+                li.innerHTML = `<input type="text" value="${ingredient}" />`;
+                ingredientsList.appendChild(li);
+            });
+        }
+
+        openModalBtn.addEventListener("click", () => {
+            renderIngredients();
+            modal.style.display = "block"; 
+        });
+
+        closeModalBtn.addEventListener("click", () => {
+            modal.style.display = "none"; 
+        });
+
+        saveChangesBtn.addEventListener("click", () => {
+            const updatedIngredients = [];
+            
+            const inputs = ingredientsList.querySelectorAll("input");
+            inputs.forEach(input => {
+                updatedIngredients.push(input.value);
+            });
+
+            const ingredientsText = updatedIngredients.join("\n");
+
+            const blob = new Blob([ingredientsText], { type: "text/plain;charset=utf-8" });
+
+            saveAs(blob, "ingredients.txt");
+
+            modal.style.display = "none";
+            alert("Изменения сохранены в файл!");
+        });
+    </script>
 </body>
 </html>
